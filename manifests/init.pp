@@ -2,8 +2,8 @@ import 'classes/*'
 
 class gitolite (
 	$root = '/var/lib/gitolite/',
-	$user = 'git',
-	$group = 'git'
+	$user = 'gitolite',
+	$group = 'gitolite'
 ) {
 	class {
 		'gitolite::packages':
