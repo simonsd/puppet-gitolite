@@ -6,7 +6,7 @@ class gitolite::config {
 			owner => "$gitolite::user",
 			group => "$gitolite::group",
 			mode => '0644',
-			content => template('gitolite/gitolite.rc');
+			content => template('gitolite/gitolite.rc.erb');
 
 		'gitolite.conf':
 			ensure => present,
@@ -14,6 +14,6 @@ class gitolite::config {
 			owner => "$gitolite::user",
 			group => "$gitolite::group",
 			mode => '0600',
-			content => template('gitolite/gitolite.conf');
+			content => template('gitolite/gitolite.conf.erb');
 	}
 }
