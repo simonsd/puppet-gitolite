@@ -4,7 +4,8 @@ class gitolite::config {
 			ensure => directory,
 			owner => "$gitolite::user",
 			group => "$gitolite::group",
-			mode => "0750";
+			mode => "0750",
+			require => User["$gitolite::user"];
 
 		"$gitolite::confdir":
 			ensure => directory,
