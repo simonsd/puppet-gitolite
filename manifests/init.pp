@@ -9,9 +9,9 @@ class gitolite (
 	class {
 		'gitolite::packages':
 			before => Class['gitolite::core'];
-		'gitolite::core':
-			before => Class['gitolite::config'];
-		'gitolite::config':;
+		'gitolite::config':
+			before => Class['gitolite::setup'];
+		'gitolite::setup':;
 	}
 
 	Exec {
