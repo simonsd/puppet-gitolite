@@ -2,7 +2,7 @@ class gitolite::user {
 	user {
 		"$gitolite::user":
 			ensure => present,
-			group => "$gitolite::group",
+			gid => "$gitolite::group",
 			require => Group["$gitolite::group"];
 	}
 
