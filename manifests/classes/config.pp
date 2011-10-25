@@ -4,8 +4,15 @@ class gitolite::config {
 			ensure => directory,
 			owner => "$gitolite::user",
 			group => "$gitolite::group",
-			mode => "0750",
+			mode => "0700",
 			require => User["$gitolite::user"];
+
+		"$gitolite::root/.ssh":
+			ensure => directory,
+			owner => "$gitolite::user",
+			group => "$gitolite::group",
+			mode => "0700",
+			require => File["$gitolite::root"];
 
 		"$gitolite::confdir":
 			ensure => directory,
