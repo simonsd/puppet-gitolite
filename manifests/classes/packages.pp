@@ -15,9 +15,7 @@ class gitolite::packages {
 
 	if $::operatingsystem == 'archlinux' {
 		realize(Yaourt::Pkg['gitolite'])
-	}
-
-	if $::operatingsystem != 'archlinux' {
+	} else {
 		realize(Package['gitolite'])
 	}
 }
