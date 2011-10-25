@@ -1,5 +1,11 @@
 class gitolite::config {
 	file {
+		"$gitolite::root":
+			ensure => directory,
+			owner => "$gitolite::user",
+			group => "$gitolite::group",
+			mode => "0750";
+
 		"$gitolite::confdir":
 			ensure => directory,
 			owner => "$gitolite::user",
