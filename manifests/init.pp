@@ -1,7 +1,7 @@
 import 'classes/*'
 
 class gitolite (
-	$root = '/var/lib/gitolite/',
+	$root = '/var/lib/gitolite',
 	$user = 'gitolite',
 	$group = 'gitolite',
 	$confdir = '/etc/gitolite',
