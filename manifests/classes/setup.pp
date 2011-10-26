@@ -9,7 +9,7 @@ class gitolite::setup {
 
 	exec {
 		'gl-setup':
-			command => "gl-setup -q $gitolite::root/.ssh/admin.pub",
+			command => "gl-setup -q .ssh/admin.pub",
 			user => "$gitolite::user",
 			cwd => "$gitolite::root",
 			require => File['admin_sshkey'];
