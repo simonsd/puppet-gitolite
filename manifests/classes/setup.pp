@@ -7,10 +7,13 @@ class gitolite::setup {
 			content => "$gitolite::sshkey";
 	}
 
+#	for some wacky reason this doesn't work when running with puppet,
+#	even though it does manually. running as root solves it.
+
 	exec {
 		'gl-setup':
 			command => "gl-setup -q .ssh/admin.pub",
-			user => "$gitolite::user",
+#			user => "$gitolite::user",
 			cwd => "$gitolite::root",
 			require => File['admin_sshkey'];
 	}
