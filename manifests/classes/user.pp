@@ -3,8 +3,6 @@ class gitolite::user {
 		"$gitolite::user":
 			ensure => present,
 			gid => "$gitolite::group",
-			home => "$gitolite::root",
-			managehome => true,
 			require => Group["$gitolite::group"];
 	}
 
