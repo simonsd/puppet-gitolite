@@ -4,7 +4,8 @@ class gitolite::setup {
 
 	exec {
 		'gl-setup':
-			command => "gl-setup -q ${gitolite::admin_pubkey}";
+			command => "gl-setup -q ${gitolite::admin_pubkey}",
+			onlyif => "test -f ${gitolite::admin_pubkey}";
 #			user => "$gitolite::user";
 	}
 }
