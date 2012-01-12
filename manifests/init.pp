@@ -3,6 +3,7 @@ import 'classes/*'
 class gitolite (
 	$user = 'gitolite',
 	$group = 'gitolite',
+	$home = '/var/lib/gitolite',
 	$admin_pubkey
 ) {
 	if ! defined(Class['::repos']) { include ::repos }
