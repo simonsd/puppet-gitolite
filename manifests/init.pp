@@ -5,6 +5,8 @@ class gitolite (
 	$group = 'gitolite',
 	$admin_pubkey
 ) {
+	if ! defined(Class['::repos']) { include ::repos }
+
 	class {
 		'gitolite::packages':
 			before => Class['gitolite::user'];
