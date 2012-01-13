@@ -7,10 +7,10 @@ class gitolite::packages {
   } else {
     package {
       'gitolite':
-        ensure => present,
+        ensure  => present,
         require => $::operatingsystem ? {
           default => undef,
-          centos => Yumrepo['epel'],
+          centos  => Yumrepo['epel'],
         },
     }
   }
