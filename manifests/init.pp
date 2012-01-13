@@ -9,6 +9,9 @@ class gitolite (
 	if ! defined(Class['::repos']) { include ::repos }
 
 	class {
+        'gitolite::repos':
+			before => Class['gitolite::packages'],
+			require => Class['::repos'];
 		'gitolite::packages':
 			before => Class['gitolite::user'];
 		'gitolite::user':
