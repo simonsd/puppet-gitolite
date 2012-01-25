@@ -1,3 +1,5 @@
 class gitolite::repos {
-  realize(Yumrepo['epel'], File['epel-gpg-key'])
+  if $::operatingsystem == 'centos' {
+    realize(Yumrepo['epel'], File['epel-gpg-key'])
+  }
 }
